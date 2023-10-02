@@ -29,4 +29,9 @@
     <Folder Include="wwwroot\images\product\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="Areas\Admin\Views\Company\Delete.cshtml" />
+    <AdditionalFiles Include="Areas\Admin\Views\Company\Index.cshtml" />
+  </ItemGroup>
+
 </Project>

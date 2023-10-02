@@ -14,6 +14,7 @@ namespace Bulky.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
 
@@ -117,6 +118,39 @@ namespace Bulky.DataAccess.Data
                     CategoryId = 3,
                     ImageURL = ""
                 });
+            
+            modelBuilder.Entity<Company>().HasData(
+                new Company()
+                {
+                    Id = 1,
+                    Name = "Google",
+                    StreetAddress = "Street1",
+                    City = "City1",
+                    State = "Ukraine",
+                    PhoneNumber = "+380999999999",
+                    PostalCode = "17500"
+                },
+                new Company()
+                {
+                    Id = 2,
+                    Name = "Apple",
+                    StreetAddress = "Street2",
+                    City = "City2",
+                    State = "Ukraine",
+                    PhoneNumber = "+380999999999",
+                    PostalCode = "17501"
+                },
+                new Company()
+                {
+                    Id = 3,
+                    Name = "Amazon",
+                    StreetAddress = "Street3",
+                    City = "City3",
+                    State = "Ukraine",
+                    PhoneNumber = "+380999999999",
+                    PostalCode = "17503"
+                }
+            );
         }
     }
 }

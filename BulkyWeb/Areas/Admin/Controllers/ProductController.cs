@@ -127,13 +127,16 @@ namespace BulkyWeb.Areas.Admin.Controllers
                 return Json(new {success = false, MessageProcessingHandler = "Error while deleting" });
             }
 
-            var oldImagePath = 
-                Path.Combine(_webHostEnvironment.WebRootPath, 
-                    productToBeDeleted.ImageURL.TrimStart('\\'));
-            
-            if (System.IO.File.Exists(oldImagePath))
+            if (productToBeDeleted.ImageURL != null)
             {
-                System.IO.File.Delete(oldImagePath);
+                var oldImagePath = 
+                    Path.Combine(_webHostEnvironment.WebRootPath, 
+                        productToBeDeleted.ImageURL.TrimStart('\\'));
+            
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
+                }
             }
 
             _unitOfWork.Product.Delete(productToBeDeleted);
